@@ -46,13 +46,13 @@ function toggleContainer(){
   if [ -z "${!PID_VARIABLE}" ]; then
     # no pid, start service
     echo "Starting $SERVICE_NAME"
-    podman rm -f "$SERVICE_NAME" 
-    eval $PID_VARIABLE=$(podman run -d --name "$SERVICE_NAME" $RUN_COMMAND)
+    docker rm -f "$SERVICE_NAME" 
+    eval $PID_VARIABLE=$(docker run -d --name "$SERVICE_NAME" $RUN_COMMAND)
     echo "Service $SERVICE_NAME started"
   else 
     # have pid, terminate service
     echo "Stopping $SERVICE_NAME"
-    podman rm -f "$SERVICE_NAME"
+    docker rm -f "$SERVICE_NAME"
     eval $PID_VARIABLE=""
     echo "Service $SERVICE_NAME stopped"
   fi
