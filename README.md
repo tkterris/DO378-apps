@@ -2,7 +2,8 @@
 
 Run in dev mode: `mvn quarkus:dev`
 Build for JVM: `mvn package`
-Run JVM: `java -jar target/quarkus-app/quarkus-run.jar`
+Run JVM: `java -jar target/<project_name>-<version>-runner.jar`
+
 Build for Native: `mvn package -Pnative -Dquarkus.native.container-build=true`
 Run native: `./target/<project_name>-<version>-runner`
 
