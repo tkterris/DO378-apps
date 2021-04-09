@@ -73,6 +73,7 @@ public class SessionStore {
         sessionOld.ifPresent(ses -> {
             ses.schedule = newSession.schedule;
             //TODO: Update the speakers
+            ses.speakers.size();
             repository.persist(ses);
         });
 
