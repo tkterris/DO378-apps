@@ -46,6 +46,10 @@
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-container-image-s2i</artifactId>
     </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-container-image-docker</artifactId>
+    </dependency>
   </dependencies>
   <repositories>
     <repository>
