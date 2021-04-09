@@ -3,9 +3,10 @@ package org.acme.rest.json;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
-import javax.json.bind.annotation.JsonbCreator;
 
+import io.quarkus.runtime.annotations.RegisterForReflection;
 
+//@RegisterForReflection
 public class Expense {
 
     enum PaymentMethod {
@@ -32,7 +33,6 @@ public class Expense {
         this(UUID.randomUUID(), name, LocalDateTime.now(), paymentMethod, amount);
     }
 
-    @JsonbCreator
     public static Expense of(String name, PaymentMethod paymentMethod, String amount) {
         return new Expense(name, paymentMethod, amount);
     }

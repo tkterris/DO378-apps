@@ -1,6 +1,5 @@
 package org.acme.rest.json;
 
-import java.util.Set;
 import java.util.UUID;
 
 import javax.inject.Inject;
@@ -24,26 +23,27 @@ public class ExpenseResource {
     public ExpenseService expenseService;
 
     @GET
-    public Set<Expense> list() {
-        return expenseService.list();
+    public Response list() {
+        return Response.ok(expenseService.list()).build();
     }
 
+/*
     @POST
-    public Expense create(Expense expense) {
-        return expenseService.create(expense);
+    public Response create(ExpenseService.Expense expense) {
+        return Response.ok(expenseService.create(expense)).build();
     }
 
     @DELETE
     @Path("{uuid}")
-    public Set<Expense> delete(@PathParam("uuid") UUID uuid) {
+    public Response delete(@PathParam("uuid") UUID uuid) {
         if (!expenseService.delete(uuid)) {
             throw new WebApplicationException(Response.Status.NOT_FOUND);
         }
-        return expenseService.list();
+        return Response.ok(expenseService.list()).build();
     }
-
     @PUT
-    public void update(Expense expense) {
+    public void update(ExpenseService.Expense expense) {
         expenseService.update(expense);
     }
+    */
 }

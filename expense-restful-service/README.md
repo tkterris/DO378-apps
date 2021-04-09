@@ -11,6 +11,10 @@ You can run your application in dev mode that enables live coding using:
 ./mvnw quarkus:dev
 ```
 
+## Debugging in Native
+
+Note that, when running in Native, the application returns empty JSON objects. This is because the Expense object needs to be registered for reflection.
+
 ## Packaging and running the application
 
 The application can be packaged using `./mvnw package`.
